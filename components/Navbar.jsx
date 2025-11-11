@@ -22,6 +22,14 @@ export default function Navbar() {
       >
         Docs
       </NavLink>
+      <NavLink
+        to="/components"
+        className={({ isActive }) =>
+          isActive ? "text-blue-600 font-bold" : "text-gray-700"
+        }
+      >
+        Components
+      </NavLink>
     </nav>
   );
 }

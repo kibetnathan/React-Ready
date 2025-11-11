@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ReactReadyLogo from '../assets/ReactReadyLogo.png';
 
 function Footer() {
   return (
@@ -9,7 +10,7 @@ function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center">
-              <img src="" alt="logo" />
+              <img src={ReactReadyLogo} alt="logo" className="h-10 w-10"/>
               <span className="ml-2 text-xl font-bold">React Ready</span>
             </div>
             <p className="text-gray-400">

@@ -5,7 +5,7 @@ export default function Sidebar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <section className="relative h-[100vh]">
+    <section className="relative h-screen w-fit">
       {/* Mobile toggle button */}
       <button
         className="md:hidden p-2 bg-blue-700 text-white rounded fixed top-15 left-4 z-50"
@@ -15,7 +15,7 @@ export default function Sidebar() {
       </button>
 
       <aside
-        className={`absolute top-0 left-0 w-64 bg-blue-800 text-white h-full md:h-full transform ${
+        className={`relative top-0 left-0 w-64 bg-blue-800 text-white h-full md:h-full transform ${
           open ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 md:translate-x-0 md:block z-10`}
       >
@@ -28,7 +28,7 @@ export default function Sidebar() {
         <nav className="text-sm">
           <ul className="flex flex-col">
             <li className="px-4 cursor-pointer bg-blue-600 text-white hover:bg-blue-700 hover:text-white">
-              <Link className="py-3 flex items-center" to="/">
+              <Link className="py-3 flex items-center" to="intro">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
