@@ -1,5 +1,6 @@
 import React from "react";
 import Search from "../components/Search";
+import ComponentCard from "../components/ComponentCard";
 
 function Components() {
   return (
@@ -9,7 +10,7 @@ function Components() {
           <h2 className="text-6xl text-blue-800">Search For A Component</h2>
         </div>
         <Search />
-        <div className="relative w-[80%] bg-blue-500 h-[80%] m-auto flex flex-row rounded-2xl">
+        <div className="relative w-full md:w-[90%] bg-blue-500 h-[80%] m-auto flex flex-row rounded-2xl">
           {/* Sidebar */}
           <div className="w-[25%] h-full bg-blue-800 rounded-l-2xl">
             <ul>
@@ -23,6 +24,14 @@ function Components() {
                 Tutorials & Components
               </li>
             </ul>
+          </div>
+          <div className="flex flex-row flex-wrap w-full h-full gap-2 overflow-scroll p-5 justify-center">
+            <ComponentCard />
+            <ComponentCard />
+            <ComponentCard />
+            <ComponentCard />
+            <ComponentCard />
+            <ComponentCard />
           </div>
         </div>
       </section>

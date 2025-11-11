@@ -25,7 +25,7 @@ function Home() {
           <p className="text-xl leading-[27px] font-normal sm:text-[24px] mb-8 md:mb-12">
             Explore tutorials and templates to shift your dev process to the next gear. 
           </p>
-        <Link to='/docs'>
+        <Link to='/components'>
           <button className="w-full flex items-center justify-between outline-gray-600 max-w-[350px] text-xl font-bold sm:text-lg rounded-[38px] bg-white text-[#1e40af] py-4 px-6 sm:px-9 hover:bg-gray-100 transition-all">
             <span>Get Started</span>
             <svg
