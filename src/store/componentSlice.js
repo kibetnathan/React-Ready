@@ -1,11 +1,16 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchComponents = createAsyncThunk(
-  'components/fetchComponents',
-  async () => {
-    const response = await fetch('/src/data/components.json');
-    const data = await response.json();
-    return data.components;
+  "components/fetchComponents",
+  async (_, { rejectWithValue }) => {
+    try {
+      const res = await fetch("/data/components.json");
+      if (!res.ok) throw new Error("Failed to fetch components");
+      const data = await res.json();
+      return data.components; // return the array
+    } catch (err) {
+      return rejectWithValue(err.message);
+    }
   }
 );
 
