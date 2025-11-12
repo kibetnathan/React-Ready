@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import ReactReadyLogo from "../assets/ReactReadyLogo.png"
+
 
 function Home() {
   return (
@@ -9,7 +9,7 @@ function Home() {
       <div className="w-full rounded-[50px] sm:rounded-[60px] md:rounded-[70px] lg:rounded-[80px] bg-[#1e40af] text-white flex flex-col lg:flex-row items-center py-6 sm:py-9 md:py-11 lg:py-14 px-2 sm:px-4 md:px-8 xl:px-16">
         <img
           className="w-full lg:w-1/2 xl:w-full max-w-[550px] lg:order-2 rounded-[50%]"
-          src={ReactReadyLogo}
+          src="/assets/ReactReadyLogo.png"
           alt="Modern design illustration"
         />
 

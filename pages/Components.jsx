@@ -15,13 +15,13 @@ function Components() {
           <div className="w-[25%] h-full bg-blue-800 rounded-l-2xl">
             <ul>
               <li className="text-white my-20 py-3 px-5 bg-blue-600 text-lg">
-                Common Components
+                Components
               </li>
               <li className="text-white my-20 py-3 px-5 border-y border-y-blue-300 text-lg">
-                Skill Tree
+                My Components
               </li>
               <li className="text-white my-20 py-3 px-5 border-y border-y-blue-300 text-lg">
-                Tutorials & Components
+                How to Use
               </li>
             </ul>
           </div>

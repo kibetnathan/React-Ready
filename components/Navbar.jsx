@@ -3,12 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="flex gap-4 p-4 bg-gray-200">
+    <nav className="flex gap-4 p-4 bg-blue-600">
       <NavLink
         to="/"
         
         className={({ isActive }) =>
-          isActive ? "text-blue-600 font-bold" : "text-gray-700"
+          isActive ? "text-blue-200 underline decoration-2 decoration-blue-200 font-bold" : "text-gray-200"
         }
       >
         Home
@@ -17,7 +17,7 @@ export default function Navbar() {
       <NavLink
         to="/docs"
         className={({ isActive }) =>
-          isActive ? "text-blue-600 font-bold" : "text-gray-700"
+          isActive ? "text-blue-200 underline decoration-2 decoration-blue-200 font-bold" : "text-gray-200"
         }
       >
         Docs
@@ -25,7 +25,7 @@ export default function Navbar() {
       <NavLink
         to="/components"
         className={({ isActive }) =>
-          isActive ? "text-blue-600 font-bold" : "text-gray-700"
+          isActive ? "text-blue-200 underline decoration-2 decoration-blue-200 font-bold" : "text-gray-200"
         }
       >
         Components

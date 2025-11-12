@@ -1,0 +1,12 @@
+{
+  "components": [
+    {
+      "id": 1,
+      "name": "Navbar",
+      "description": "A responsive navigation bar ",
+      "tutorial": "navtut",
+      "image": "assets/canvas.min.webp"
+    },
+    {}
+  ]
+}
