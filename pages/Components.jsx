@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Search from "../components/Search";
 import ComponentCard from "../components/ComponentCard";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchComponents } from "../src/store/componentSlice";
 
 function Components() {
+  const dispatch = useDispatch();
+  const { items, status, error } = useSelector((state) => state.components);
+
+  useEffect(() => {
+    dispatch(fetchComponents());
+  }, [dispatch]);
+ 
   return (
     <>
       <section className="flex flex-col h-screen">

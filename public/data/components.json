@@ -3,10 +3,23 @@
     {
       "id": 1,
       "name": "Navbar",
-      "description": "A responsive navigation bar ",
+      "description": "A responsive navigation bar",
       "tutorial": "navtut",
       "image": "assets/canvas.min.webp"
     },
-    {}
+    {
+      "id": 2,
+      "name": "Footer",
+      "description": "A simple footer with links and copyright info",
+      "tutorial": "footertut",
+      "image": "assets/footer.webp"
+    },
+    {
+      "id": 3,
+      "name": "Home Page",
+      "description": "The main landing page with hero section, features, and call to action",
+      "tutorial": "hometut",
+      "image": "assets/homepage.webp"
+    }
   ]
 }
