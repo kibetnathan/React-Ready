@@ -101,7 +101,7 @@ function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  to="/dashboard"
+                  to="/components"
                   className="text-gray-400 hover:text-white transition"
                 >
                   Saved Components

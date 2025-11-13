@@ -15,7 +15,7 @@ export default function Navbar() {
       </NavLink>
 
       <NavLink
-        to="/docs"
+        to="/docs/intro"
         className={({ isActive }) =>
           isActive ? "text-blue-200 underline decoration-2 decoration-blue-200 font-bold" : "text-gray-200"
         }

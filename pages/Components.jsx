@@ -1,14 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Search from "../components/Search";
 import ComponentCard from "../components/ComponentCard";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchComponents } from "../src/store/componentSlice"; // adjust path
+import { fetchComponents } from "../src/store/componentSlice";
+import { useNavigate } from "react-router-dom";
 
 function Components() {
   const dispatch = useDispatch();
-  const { items, status, error, searchQuery } = useSelector((state) => state.components);
-
-  // Filter components based on searchQuery
+  const { items, status, error, searchQuery } = useSelector(
+    (state) => state.components
+  );
+  const navigate = useNavigate();
   const filteredItems = items.filter((component) =>
     component.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -16,6 +18,64 @@ function Components() {
   useEffect(() => {
     dispatch(fetchComponents());
   }, [dispatch]);
+
+  const [view, setView] = useState("components");
+
+  function switchView(vp) {
+    switch (vp) {
+      case "components":
+        setView(vp);
+        console.log("viewpoint =" + vp);
+        break;
+      case "myComp":
+        setView(vp);
+        console.log("viewpoint =" + vp);
+        break;
+      default:
+        alert("Fix yo function!");
+        break;
+    }
+  }
+  function ComponentDisplay() {
+    return (
+       <div className="flex flex-row flex-wrap w-full h-full gap-x-20 gap-y-2 overflow-scroll p-5 justify-center">
+        {status === "loading" && (
+          <p className="text-white">Loading components...</p>
+        )}
+        {status === "failed" && <p className="text-red-500">{error}</p>}
+        {status === "succeeded" &&
+          filteredItems.map((component) => (
+            <ComponentCard
+              key={component.id}
+              name={component.name}
+              description={component.description}
+              tutorial={component.tutorial}
+              image={component.image}
+            />
+          ))}
+      </div>
+    );
+  }
+  function MyComponents() {
+    return (
+      <div className="flex flex-row flex-wrap w-full h-full gap-x-20 gap-y-2 overflow-scroll p-5 justify-center">
+        {status === "loading" && (
+          <p className="text-white">Loading components...</p>
+        )}
+        {status === "failed" && <p className="text-red-500">{error}</p>}
+        {status === "succeeded" &&
+          filteredItems.map((component) => (
+            <ComponentCard
+              key={component.id}
+              name={component.name}
+              description={component.description}
+              tutorial={component.tutorial}
+              image={component.image}
+            />
+          ))}
+      </div>
+    );
+  }
 
   return (
     <section className="flex flex-col h-screen">
@@ -29,26 +89,37 @@ function Components() {
         {/* Sidebar */}
         <div className="w-[25%] h-full bg-blue-800 rounded-l-2xl">
           <ul>
-            <li className="text-white my-20 py-3 px-5 bg-blue-600 text-lg">Components</li>
-            <li className="text-white my-20 py-3 px-5 border-y border-y-blue-300 text-lg">My Components</li>
-            <li className="text-white my-20 py-3 px-5 border-y border-y-blue-300 text-lg">How to Use</li>
+            <li
+              className={`text-white my-20 py-3 px-5 text-lg ${
+                view === "components"
+                  ? "bg-blue-600"
+                  : "bg-blue-800 border-y border-y-blue-300"
+              }`}
+              onClick={() => switchView("components")}
+            >
+              Components
+            </li>
+
+            <li
+                            className={`text-white my-20 py-3 px-5 text-lg ${
+                view === "myComp"
+                  ? "bg-blue-600"
+                  : "bg-blue-800 border-y border-y-blue-300"
+              }`}
+              onClick={() => switchView("myComp")}
+            >
+              My Components
+            </li>
+            <li
+              className="text-white my-20 py-3 px-5 border-y border-y-blue-300 text-lg hover:cursor-pointer hover:bg-blue-400"
+              onClick={() => navigate("/")}
+            >
+              {"<-- Go Back Home"}
+            </li>
           </ul>
         </div>
-
-        <div className="flex flex-row flex-wrap w-full h-full gap-2 overflow-scroll p-5 justify-center">
-          {status === "loading" && <p className="text-white">Loading components...</p>}
-          {status === "failed" && <p className="text-red-500">{error}</p>}
-          {status === "succeeded" &&
-            filteredItems.map((component) => (
-              <ComponentCard
-                key={component.id}
-                name={component.name}
-                description={component.description}
-                tutorial={component.tutorial}
-                image={component.image}
-              />
-            ))}
-        </div>
+        {view === "components" && <ComponentDisplay />}
+        {view === "myComp" && <MyComponents />}
       </div>
     </section>
   );
