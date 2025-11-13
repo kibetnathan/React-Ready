@@ -14,11 +14,11 @@ function Home() {
         />
 
         <div className="text-center md:text-left">
-          <h1 className="text-4xl leading-[48px] md:text-5xl md:leading-[58px] lg:text-[50px] lg:leading-[70px] font-bold mb-6 md:mb-12">
+          <h1 className="text-4xl leading-12 md:text-6xl md:leading-[58px] lg:text-[60px] lg:leading-[70px] font-bold mb-6 md:mb-12">
             Elevate Your React Tools with React Ready
           </h1>
 
-          <span className="text-xl leading-[34px] underline font-semibold sm:text-[24px] mb-3 mt-5 block">
+          <span className="text-xl leading-[34px] font-semibold sm:text-4xl mb-3 mt-5 block">
             Learn and Create from top notch Examples
           </span>
 
