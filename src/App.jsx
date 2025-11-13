@@ -6,6 +6,8 @@ import Footer from '../components/Footer'
 import DocsIntro from '../components/DocsIntro'
 import Components from '../pages/Components'
 import NavbarTut from '../Tutorials&Components/NavbarTut'
+import FooterTut from '../Tutorials&Components/FooterTut'
+import LandingPageTut from '../Tutorials&Components/HomeTut'
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
       <Route path='intro' element={ < DocsIntro/> }/>
       </Route>
       <Route path='/navtut' element={ <NavbarTut/> }/>
+      <Route path='/footertut' element={ <FooterTut/> }/>
+      <Route path='/hometut' element={ <LandingPageTut/> }/>
     </Routes>
     <Footer />
     </BrowserRouter>

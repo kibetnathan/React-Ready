@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 function ComponentCard({ name, description, tutorial, image }) {
   return (
-    <div className="max-w-sm h-fit bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 md:w-[300px]">
+    <div className="max-w-sm max-h-fit bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 md:w-[300px]">
       <img
-        className="w-full object-cover h-80"
+        className="w-full object-cover"
         src={image} // dynamic image
         alt={name}
       />

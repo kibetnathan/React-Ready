@@ -293,24 +293,34 @@ const Navbar = () => {
             </pre>
           </div>
           <h2 className="text-2xl font-semibold py-5 underline decoration-3">
-            <pre className="font-sans"> Step 7: Add Navigation with Link and NavLink </pre>
+            <pre className="font-sans">
+              {" "}
+              Step 7: Add Navigation with Link and NavLink{" "}
+            </pre>
           </h2>
-          <p>Link allows the user to navigate to different Routes and NavLink has the same feature but has the extra feature of being able to tell when the link is active</p>
+          <p>
+            Link allows the user to navigate to different Routes and NavLink has
+            the same feature but has the extra feature of being able to tell
+            when the link is active
+          </p>
           <div className="m-2 bg-gray-900 text-white rounded-2xl px-5 pt-2 pb-3">
             <span className="text-xs">jsx</span> <br />
             <br />
             <pre className="">
-            <code>{codeString}</code>
-          </pre>
+              <code>{codeString}</code>
+            </pre>
           </div>
           <h2 className="text-2xl font-semibold py-5 underline decoration-3">
-            <pre className="font-sans"> Step 8: Import Navbar in App.jsx so It's consistent among routes</pre>
+            <pre className="font-sans">
+              {" "}
+              Step 8: Import Navbar in App.jsx so It's consistent among routes
+            </pre>
           </h2>
           <div className="m-2 bg-gray-900 text-white rounded-2xl px-5 pt-2 pb-3">
             <span className="text-xs">jsx</span> <br />
             <br />
             <pre className="">
-            {`import Navbar from "./Navbar";
+              {`import Navbar from "./Navbar";
 
 function App() {
   return (
@@ -320,11 +330,13 @@ function App() {
     </div>
   );
 }`}
-          </pre>
+            </pre>
           </div>
 
-
-          <p className="text-lg py-13">And Just like that you've been able to make and implement a Navbar with React Router!</p>
+          <p className="text-lg py-13">
+            And Just like that you've been able to make and implement a Navbar
+            with React Router!
+          </p>
         </div>
       </div>
     </div>

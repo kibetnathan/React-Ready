@@ -19,7 +19,14 @@
       "name": "Home Page",
       "description": "The main landing page with hero section, features, and call to action",
       "tutorial": "hometut",
-      "image": "assets/homepage.webp"
+      "image": "assets/home.webp"
+    },
+    {
+      "id": 4,
+      "name": "Search Bar",
+      "description": "A search bar that uses redux",
+      "tutorial": "searchtut",
+      "image": "assets/search.webp"
     }
   ]
 }
