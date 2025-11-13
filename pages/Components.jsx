@@ -56,26 +56,58 @@ function Components() {
       </div>
     );
   }
-  function MyComponents() {
-    return (
-      <div className="flex flex-row flex-wrap w-full h-full gap-x-20 gap-y-2 overflow-scroll p-5 justify-center">
-        {status === "loading" && (
-          <p className="text-white">Loading components...</p>
-        )}
-        {status === "failed" && <p className="text-red-500">{error}</p>}
-        {status === "succeeded" &&
-          filteredItems.map((component) => (
-            <ComponentCard
-              key={component.id}
-              name={component.name}
-              description={component.description}
-              tutorial={component.tutorial}
-              image={component.image}
-            />
-          ))}
-      </div>
-    );
+  
+function MyComponents() {
+  const { items, status, error } = useSelector((state) => state.components);
+  const [savedComponents, setSavedComponents] = useState([]);
+
+  // Helper to load from localStorage
+  const loadSaved = () => {
+    const saved = JSON.parse(localStorage.getItem("savedComponents")) || [];
+    const savedIds = saved.map(Number);
+    const filtered = items.filter((component) => savedIds.includes(component.id));
+    setSavedComponents(filtered);
+  };
+
+  useEffect(() => {
+  const saved = JSON.parse(localStorage.getItem("savedComponents")) || [];
+  // If saved contains objects instead of ids, use them directly
+  if (saved.length && typeof saved[0] === "object") {
+    setSavedComponents(saved);
+  } else {
+    const savedIds = saved.map(Number);
+    const filtered = items.filter((component) => savedIds.includes(component.id));
+    setSavedComponents(filtered);
   }
+}, [items]);
+
+  return (
+    <div className="flex flex-row flex-wrap w-full h-full gap-x-10 gap-y-2 overflow-scroll p-5 justify-center">
+      {status === "loading" && (
+        <p className="text-white">Loading components...</p>
+      )}
+      {status === "failed" && <p className="text-red-500">{error}</p>}
+
+      {status === "succeeded" && savedComponents.length === 0 && (
+        <p className="text-white text-lg">
+          You haven’t saved any components yet.
+        </p>
+      )}
+
+      {status === "succeeded" &&
+        savedComponents.map((component) => (
+          <ComponentCard
+            key={component.id}
+            name={component.name}
+            description={component.description}
+            tutorial={component.tutorial}
+            image={component.image}
+          />
+        ))}
+    </div>
+  );
+}
+
 
   return (
     <section className="flex flex-col h-screen">

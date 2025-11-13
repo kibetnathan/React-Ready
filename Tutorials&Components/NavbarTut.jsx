@@ -8,15 +8,12 @@ function NavbarTut() {
   const dispatch = useDispatch();
   const { items, status } = useSelector((state) => state.components);
 
-  // Fetch components from slice if not already loaded
   useEffect(() => {
     if (status === "idle") dispatch(fetchComponents());
   }, [status, dispatch]);
 
-  // Find the Navbar component (id = 1)
   const component = items.find((c) => c.id === 1);
 
-  // Save / Unsave functionality
   function saveComponent() {
     if (!component) return;
     const saved = JSON.parse(localStorage.getItem("savedComponents")) || [];

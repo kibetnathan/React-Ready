@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchComponents } from "../src/store/componentSlice";
 
 function FooterTut() {
+    const dispatch = useDispatch();
+    const { items, status } = useSelector((state) => state.components);
+
+    useEffect(() => {
+        if (status === "idle") dispatch(fetchComponents());
+      }, [status, dispatch]);
+    
+      const component = items.find((c) => c.id === 2);
+    
+      function saveComponent() {
+        if (!component) return;
+        const saved = JSON.parse(localStorage.getItem("savedComponents")) || [];
+        const exists = saved.find((c) => c.id === component.id);
+        if (exists) return console.log("Already saved");
+    
+        saved.push(component);
+        localStorage.setItem("savedComponents", JSON.stringify(saved));
+        console.log("✅ Saved:", component.name);
+      }
+    
+      function unsaveComponent() {
+        if (!component) return;
+        const saved = JSON.parse(localStorage.getItem("savedComponents")) || [];
+        const updated = saved.filter((c) => c.id !== component.id);
+        localStorage.setItem("savedComponents", JSON.stringify(updated));
+        console.log("❌ Unsave:", component.name);
+      }
+    
+
   const codeString = String.raw`
 //Footer.jsx
 
@@ -86,6 +117,20 @@ export default Footer;
     <div>
       <div className="w-full min-h-screen flex flex-col items-center bg-gray-200">
         <h2 className="text-blue-700 text-5xl font-semibold">Footer</h2>
+         <div className="flex gap-2">
+            <button
+              onClick={saveComponent}
+              className="bg-blue-800 text-white p-3 rounded hover:bg-blue-600"
+            >
+              Save
+            </button>
+            <button
+              onClick={unsaveComponent}
+              className="bg-red-700 text-white p-3 rounded hover:bg-red-500"
+            >
+              Unsave
+            </button>
+          </div>
         <div className="w-full flex flex-row p-15 box-border items-baseline">
           <h3 className="text-3xl underline decoration-2 mr-30">Code</h3>
           <h3 className="text-2xl">

@@ -48,15 +48,19 @@ export default function Sidebar() {
             </li>
 
             <li className="px-4 py-2 text-xs uppercase tracking-wider text-blue-300 font-bold">
+              Questions
+            </li>
+            <li className="px-4 cursor-pointer hover:bg-blue-700">
+              <Link className="py-3 flex items-center" to="faqs">
+                FAQs
+              </Link>
+            </li>
+            
+            <li className="px-4 py-2 text-xs uppercase tracking-wider text-blue-300 font-bold">
               How To Use
             </li>
             <li className="px-4 cursor-pointer hover:bg-blue-700">
-              <Link className="py-3 flex items-center" to="/users">
-                Account Set Up
-              </Link>
-            </li>
-            <li className="px-4 cursor-pointer hover:bg-blue-700">
-              <Link className="py-3 flex items-center" to="/roles">
+              <Link className="py-3 flex items-center">
                 Tools
               </Link>
             </li>
@@ -89,14 +93,8 @@ export default function Sidebar() {
               </Link>
             </li>
 
-            <li className="px-4 py-2 text-xs uppercase tracking-wider text-blue-300 font-bold">
-              Questionss
-            </li>
-            <li className="px-4 cursor-pointer hover:bg-blue-700">
-              <Link className="py-3 flex items-center" to="/reports">
-                FAQs
-              </Link>
-            </li>
+            <li className="px-4 h-5"></li>
+
             <li className="px-4 cursor-pointer hover:bg-blue-700">
               <Link className="py-3 flex items-center" to="/reports">
                 Contact Us
