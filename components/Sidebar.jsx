@@ -69,17 +69,17 @@ export default function Sidebar() {
               Components
             </li>
             <li className="px-4 cursor-pointer hover:bg-blue-700">
-              <Link className="py-3 flex items-center" to="/categories">
+              <Link className="py-3 flex items-center" to="/components">
                 Tutorials
               </Link>
             </li>
             <li className="px-4 cursor-pointer hover:bg-blue-700">
-              <Link className="py-3 flex items-center" to="/products">
+              <Link className="py-3 flex items-center" to="/components">
                 Saving Components
               </Link>
             </li>
 
-            <li className="px-4 py-2 text-xs uppercase tracking-wider text-blue-300 font-bold">
+            {/* <li className="px-4 py-2 text-xs uppercase tracking-wider text-blue-300 font-bold">
               Libraries
             </li>
             <li className="px-4 cursor-pointer hover:bg-blue-700">
@@ -91,12 +91,12 @@ export default function Sidebar() {
               <Link className="py-3 flex items-center" to="/payments">
                 Router
               </Link>
-            </li>
+            </li> */}
 
             <li className="px-4 h-5"></li>
 
             <li className="px-4 cursor-pointer hover:bg-blue-700">
-              <Link className="py-3 flex items-center" to="/reports">
+              <Link className="py-3 flex items-center">
                 Contact Us
               </Link>
             </li>
